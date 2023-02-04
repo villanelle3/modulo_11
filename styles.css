@@ -2,7 +2,7 @@
     --shade1: #fcfcfc;
     --shade2: #0fc9e7;
     --shade3: #3186b2; 
-    --shade4: #4756ca; ; 
+    --shade4: #4756ca; 
 }
 
 ::selection {
@@ -16,6 +16,8 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
+
+body { overflow-x: hidden; }
 
 #title{
     font-family: 'Permanent Marker', cursive;
@@ -128,13 +130,15 @@ section h2{
     border: none;
     border-radius: 2px;
 }
+
 .add:hover{
     font-style: normal;
     background-color: var(--shade3);
     transition: 0.5s;
 }
 #products .imagegrid h3{
-    margin: 16px 0;
+    margin-top: 16px;
+    margin-bottom: 8px;
 }
 
 footer{
@@ -143,4 +147,79 @@ footer{
     color:var(--shade1);
 }
 
+.desc{
+    color:gray;
+    text-align: left;
+    margin-bottom: 8px;
+}
 
+@media screen and (max-width: 767px) {
+    .container{
+        max-width: 90%;
+    }
+    
+    header{
+        position:relative;
+    }
+    #about{
+        margin-right: 0;
+        padding-right: 0;
+    }
+    .container img{
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 25px;
+        width: 360px;
+        height: auto;
+    }
+
+    .text{
+        padding: 0;
+    }
+    
+    #about > .container{
+        display: block;
+        padding-left:0;
+        justify-content:center;
+    }
+
+    #products .imagegrid {
+        display: block;
+    }
+
+    #products .imagegrid h3{
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    header{
+        position:relative;
+    }
+
+    .container{
+        max-width: 90%;
+    }
+
+    #about > .container{
+        display: block;
+        padding-left:0;
+        justify-content:center;
+    }
+
+    #imgMain{
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 25px;
+        width: 750px;
+        height: auto;
+    }
+
+    #products .imagegrid {
+        grid-template-columns: repeat(2, 49%); /* fractions */
+    }
+
+}
